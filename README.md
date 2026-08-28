@@ -74,18 +74,17 @@ admin tenha cadastrado o e-mail antes.
 O app já está publicado no Render como Static Site, a partir deste
 repositório GitHub:
 
-**🔗 https://alevinos-app.onrender.com**
+**🔗 https://alevinos-app1.onrender.com**
 
 Esse é o link que você compartilha com a equipe — é o mesmo link usado no
 passo a passo de instalação (seção 8) e é o endereço a usar em qualquer
 navegador (celular ou computador).
 
 Detalhes técnicos do deploy (só relevante se for mexer nisso de novo):
-- Serviço Render: `alevinos-app` (workspace "My Workspace")
-- Repositório: `https://github.com/controle-alevinos/alevinos-app`, branch `main`
-- Publish directory: `alevinosapp/alevinos-app` (os arquivos do app ficaram
-  aninhados dentro dessa subpasta no repositório — o Render foi configurado
-  para publicar a partir dali; não precisa reorganizar nada)
+- Serviço Render: `alevinos-app1` (workspace "My Workspace")
+- Repositório: `https://github.com/controle-alevinos/alevinos-app1`, branch `main`
+- Publish directory: `./` (raiz do repositório — os arquivos do app ficam
+  soltos direto na raiz, sem subpasta)
 - Deploy automático: toda vez que você enviar uma alteração para a branch
   `main` no GitHub, o Render republica sozinho em 1-2 minutos.
 - O app é só HTML/JS/CSS estático, então também funcionaria em qualquer
@@ -132,7 +131,7 @@ a partir do link — sem Play Store, sem loja de app nenhuma — e ele passa a
 abrir em tela cheia, com ícone próprio, exatamente como um app comum do
 celular.
 
-**Envie para a equipe apenas isto:** o link **https://alevinos-app.onrender.com**
+**Envie para a equipe apenas isto:** o link **https://alevinos-app1.onrender.com**
 e o passo a passo abaixo de acordo com o aparelho de cada um.
 
 ### Celular Android (Chrome)
