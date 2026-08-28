@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gestão de Alevinos</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐟</text></svg>" />
+<link rel="stylesheet" href="css/style.css" />
+
+<!-- PWA: permite "instalar" o app (ícone na tela, tela cheia, sem barra
+     do navegador), igual a um app de loja. Veja README.md, seção 9. -->
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#0f766e" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Alevinos" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="login-screen" class="login-screen">
+  <div class="login-card">
+    <div class="login-logo">🐟 <span>Gestão de Alevinos</span></div>
+    <p class="login-sub">Acesse com seu login de funcionário</p>
+    <form id="login-form">
+      <label>E-mail</label>
+      <input type="email" id="login-email" required autocomplete="username" />
+      <label>Senha</label>
+      <input type="password" id="login-password" required autocomplete="current-password" />
+      <div id="login-error" class="form-error" hidden></div>
+      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+    </form>
+    <button id="btn-show-signup" class="btn-link">Primeiro acesso? Criar conta de administrador</button>
+    <form id="signup-form" hidden>
+      <label>Nome completo</label>
+      <input type="text" id="signup-nome" required />
+      <label>E-mail</label>
+      <input type="email" id="signup-email" required autocomplete="username" />
+      <label>Senha</label>
+      <input type="password" id="signup-password" required minlength="6" autocomplete="new-password" />
+      <div id="signup-error" class="form-error" hidden></div>
+      <div id="signup-info" class="form-info" hidden></div>
+      <button type="submit" class="btn btn-primary btn-block">Criar conta</button>
+      <button type="button" id="btn-show-login" class="btn-link">Voltar ao login</button>
+    </form>
+  </div>
+</div>
+
+<div id="app-shell" class="app-shell" hidden>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">🐟</span>
+      <div>
+        <div class="sidebar-title">Gestão de Alevinos</div>
+        <div class="sidebar-user" id="sidebar-user"></div>
+      </div>
+    </div>
+    <nav id="menu" class="menu"></nav>
+    <button id="btn-install" class="btn-install" hidden>⬇️ Instalar app</button>
+    <button id="btn-logout" class="btn-logout">Sair</button>
+  </aside>
+
+  <div class="main-col">
+    <header class="topbar">
+      <button id="btn-toggle-sidebar" class="icon-btn" aria-label="Menu">☰</button>
+      <div id="page-title" class="page-title">Dashboard</div>
+    </header>
+    <main id="content" class="content"></main>
+  </div>
+</div>
+
+<div id="toast-container" class="toast-container"></div>
+<div id="modal-root"></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
